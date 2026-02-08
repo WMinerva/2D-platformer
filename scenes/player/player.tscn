@@ -9,6 +9,8 @@ size = Vector2(13, 23)
 [node name="Player" type="CharacterBody2D" unique_id=1233733205]
 script = ExtResource("1_dovo2")
 speed = 180
+jump_speed = 330
+gravity = 980
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1417317569]
