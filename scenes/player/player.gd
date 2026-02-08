@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed: int
 @export var jump_speed: int
-@export var gravity : int
+@export var gravity: int
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite
 
 var is_facing_right = true
@@ -14,28 +14,27 @@ func _physics_process(delta: float) -> void:
 	flip()
 	move_and_slide()
 	update_animations()
-	
+
+
 func update_animations():
 	if not is_on_floor():
 		if velocity.y < 0:
-			
 			animated_sprite.play("jump")
 		else:
 			animated_sprite.play("fall")
 		return
-		
-		
+
 	if velocity.x != 0:
 		animated_sprite.play("run")
 	else:
 		animated_sprite.play("idle")
-	
+
+
 func jump(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = -jump_speed
 	if not is_on_floor():
 		velocity.y += gravity * delta
-		
 
 
 func flip():
