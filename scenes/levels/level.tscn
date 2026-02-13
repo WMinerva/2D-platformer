@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bfmdhui60sudr" path="res://scenes/player/player.tscn" id="1_377w7"]
 [ext_resource type="Texture2D" uid="uid://cklpisnrrq8wg" path="res://assets/sprites/tiles/background-tile.png" id="1_b2cq8"]
 [ext_resource type="Texture2D" uid="uid://bbu4h8iex5g8e" path="res://assets/sprites/tiles/foreground.png" id="2_bovvr"]
+[ext_resource type="Script" uid="uid://cbpmnx8dv22l" path="res://scenes/levels/camera_2d.gd" id="4_xb4v1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xb4v1"]
 texture = ExtResource("1_b2cq8")
@@ -72,3 +73,6 @@ tile_set = SubResource("TileSet_xb4v1")
 
 [node name="Player" parent="." unique_id=1233733205 instance=ExtResource("1_377w7")]
 position = Vector2(110, 141)
+
+[node name="FollowCamera" type="Camera2D" parent="." unique_id=1848149481]
+script = ExtResource("4_xb4v1")

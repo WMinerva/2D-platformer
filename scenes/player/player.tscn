@@ -205,9 +205,9 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
-size = Vector2(16, 24)
+size = Vector2(15, 24)
 
-[node name="Player" type="CharacterBody2D" unique_id=1233733205]
+[node name="Player" type="CharacterBody2D" unique_id=1233733205 groups=["player"]]
 script = ExtResource("1_dovo2")
 speed = 180
 jump_speed = 330
@@ -216,10 +216,9 @@ metadata/_edit_group_ = true
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=1149916273]
 sprite_frames = SubResource("SpriteFrames_4hvnv")
-animation = &"run"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.55064034
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=328191857]
-position = Vector2(0, 3)
+position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_dovo2")
