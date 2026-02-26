@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://hqlhgscsmgtw"]
 
 [ext_resource type="Texture2D" uid="uid://bfneyfo13idwe" path="res://assets/sprites/other/apple.png" id="1_wr6vk"]
+[ext_resource type="Script" uid="uid://oft2ioyovjdr" path="res://scenes/collectibles/apple.gd" id="1_xk55w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xk55w"]
 size = Vector2(12, 10)
@@ -44,6 +45,9 @@ _data = {
 }
 
 [node name="Apple" type="Area2D" unique_id=173983209]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_xk55w")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2118229382]
@@ -55,3 +59,5 @@ shape = SubResource("RectangleShape2D_xk55w")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1392436254]
 libraries/ = SubResource("AnimationLibrary_xk55w")
 autoplay = &"apple"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

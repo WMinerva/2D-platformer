@@ -207,6 +207,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
 size = Vector2(15, 24)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p47bc"]
+size = Vector2(21, 26)
+
 [node name="Player" type="CharacterBody2D" unique_id=1233733205 groups=["player"]]
 script = ExtResource("1_dovo2")
 speed = 180
@@ -222,3 +225,13 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=328191857]
 position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_dovo2")
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=319910267]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=185297734]
+position = Vector2(0.5, 3)
+shape = SubResource("RectangleShape2D_p47bc")
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
