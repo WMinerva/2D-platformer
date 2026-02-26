@@ -66,6 +66,7 @@ size = Vector2(42, 17)
 
 [node name="Bat" unique_id=88328363 instance=ExtResource("1_rt4uy")]
 script = ExtResource("2_5m14n")
+speed = 40
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=389387817]
 sprite_frames = SubResource("SpriteFrames_m5s8h")
