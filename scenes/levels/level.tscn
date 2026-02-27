@@ -67,6 +67,9 @@ texture = ExtResource("2_bovvr")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_b2cq8")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ouxo3"]
+size = Vector2(65, 20)
+
 [node name="Level" type="Node2D" unique_id=479086563]
 
 [node name="TilemapsLayers" type="Node2D" parent="." unique_id=1732389165]
@@ -93,6 +96,16 @@ position = Vector2(209, 131)
 [node name="Spikes" parent="Traps" unique_id=411970089 instance=ExtResource("8_ouxo3")]
 position = Vector2(176, 88)
 
+[node name="FallDeathArea" type="Area2D" parent="Traps" unique_id=1479166857 groups=["traps"]]
+position = Vector2(306, 260)
+collision_layer = 16
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Traps/FallDeathArea" unique_id=1083758550]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_ouxo3")
+
 [node name="Enemies" type="Node2D" parent="." unique_id=518537984]
 
 [node name="Mushroom" parent="Enemies" unique_id=88328363 instance=ExtResource("5_urvlt")]
@@ -101,7 +114,7 @@ collision_layer = 1
 collision_mask = 1
 
 [node name="Mushroom2" parent="Enemies" unique_id=924970480 instance=ExtResource("5_urvlt")]
-position = Vector2(229, 46)
+position = Vector2(236, 159)
 collision_layer = 1
 collision_mask = 1
 

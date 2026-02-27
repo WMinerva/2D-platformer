@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7bup"]
 size = Vector2(28, 5)
 
-[node name="Spikes" type="Area2D" unique_id=411970089]
+[node name="Spikes" type="Area2D" unique_id=411970089 groups=["traps"]]
 collision_layer = 16
 collision_mask = 2
 metadata/_edit_group_ = true

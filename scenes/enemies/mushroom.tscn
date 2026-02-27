@@ -129,7 +129,7 @@ size = Vector2(14, 12)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1calh"]
 radius = 8.0
-height = 18.0
+height = 20.0
 
 [node name="Mushroom" unique_id=88328363 instance=ExtResource("1_uk2no")]
 script = ExtResource("2_1calh")
@@ -146,8 +146,11 @@ frame_progress = 0.32719657
 position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_1calh")
 
-[node name="CollisionShape2D" parent="HurtBox" parent_id_path=PackedInt32Array(2000100387) index="0" unique_id=1769150756]
-position = Vector2(0, 6)
+[node name="HurtBox" parent="." index="2" unique_id=2000100387]
+position = Vector2(0, -7)
+
+[node name="CollisionShape2D" parent="HurtBox" index="0" unique_id=1769150756]
+position = Vector2(0, 13)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_1calh")
 

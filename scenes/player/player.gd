@@ -49,4 +49,10 @@ func move_x():
 
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
-	queue_free()
+	if area.is_in_group("traps"):
+		queue_free()
+		return 
+	if position.y < area.global_position.y:
+		velocity.y = -jump_speed
+	else:
+		queue_free()
