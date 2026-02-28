@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var jump_speed: int
 @export var gravity: int
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var is_facing_right = true
 
@@ -50,9 +51,17 @@ func move_x():
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
 	if area.is_in_group("traps"):
-		queue_free()
+		animation_player.play("player_death")
+		set_physics_process(false)
+		animated_sprite.pause()
 		return 
 	if position.y < area.global_position.y:
 		velocity.y = -jump_speed
 	else:
-		queue_free()
+		animation_player.play("player_death")
+		set_physics_process(false)
+		animated_sprite.pause()
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	queue_free()
