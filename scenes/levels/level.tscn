@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dbpmrsgtuhkln" path="res://scenes/enemies/bat.tscn" id="6_d4w6o"]
 [ext_resource type="PackedScene" uid="uid://hqlhgscsmgtw" path="res://scenes/collectibles/apple.tscn" id="7_mbbpy"]
 [ext_resource type="PackedScene" uid="uid://ck6gqdwfti4xe" path="res://scenes/traps/spikes.tscn" id="8_ouxo3"]
+[ext_resource type="PackedScene" uid="uid://dyc0j3dibscov" path="res://scenes/moving_platform/moving_platform.tscn" id="9_icy5c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xb4v1"]
 texture = ExtResource("1_b2cq8")
@@ -125,3 +126,13 @@ collision_mask = 1
 
 [node name="Player" parent="." unique_id=1233733205 instance=ExtResource("1_377w7")]
 position = Vector2(110, 141)
+
+[node name="MovingPlatforms" type="Node2D" parent="." unique_id=1904155301]
+
+[node name="MovingPlatform" parent="MovingPlatforms" unique_id=89727865 node_paths=PackedStringArray("target") instance=ExtResource("9_icy5c")]
+position = Vector2(357, 62)
+collision_layer = 1
+target = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="MovingPlatforms/MovingPlatform" unique_id=1583426933]
+position = Vector2(120, -1)
