@@ -132,6 +132,7 @@ radius = 8.0
 height = 20.0
 
 [node name="Mushroom" unique_id=88328363 instance=ExtResource("1_uk2no")]
+collision_mask = 3
 script = ExtResource("2_1calh")
 speed = 40
 gravity = 980

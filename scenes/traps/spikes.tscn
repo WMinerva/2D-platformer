@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://723yjxqavouq" path="res://assets/sprites/other/spikes.png" id="1_x0y1a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7bup"]
-size = Vector2(28, 5)
+size = Vector2(26, 5)
 
 [node name="Spikes" type="Area2D" unique_id=411970089 groups=["traps"]]
 collision_layer = 16
