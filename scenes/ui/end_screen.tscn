@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bpscall1nubaa"]
 
 [ext_resource type="Texture2D" uid="uid://dirx0udqknego" path="res://assets/sprites/ui/background.png" id="1_4ttpn"]
+[ext_resource type="Script" uid="uid://cly8g0tqrnouv" path="res://scenes/ui/end_screen.gd" id="1_n8r4t"]
 
 [node name="EndScreen" type="Control" unique_id=708624256]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_n8r4t")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=769702968]
 layout_mode = 1
