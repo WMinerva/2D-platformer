@@ -64,4 +64,5 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	GameManager.restart_level()
 	queue_free()

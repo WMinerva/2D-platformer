@@ -55,3 +55,5 @@ autoplay = "default"
 position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_cugnv")
 one_way_collision_margin = 0.0
+
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
