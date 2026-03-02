@@ -57,10 +57,10 @@ layout_mode = 2
 text = "your score: 23"
 horizontal_alignment = 1
 
-[node name="Return" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1726867470]
+[node name="Return_button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1726867470]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "go back"
 
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Return_button" to="." method="_on_return_pressed"]

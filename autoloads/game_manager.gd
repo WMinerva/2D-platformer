@@ -11,6 +11,7 @@ const LEVELS = {
 }
 
 var current_level = 0
+var lives = 3
 
 func load_next_level():
 	current_level += 1
@@ -22,9 +23,14 @@ func load_next_level():
 		
 
 func restart_level():
+	lives -= 1
+	if lives ==0:
+		get_tree().change_scene_to_packed.call_deferred(END_SCREEN)
+		return
 	get_tree().change_scene_to_packed(LEVELS[current_level])
 	
 	
 func restart_game():
 	current_level = 0
+	lives = 3
 	get_tree().change_scene_to_packed(MAIN)
