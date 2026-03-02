@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b8pr2q4ph21ps"]
+
+[ext_resource type="Script" uid="uid://d1r2brkqy33or" path="res://scenes/ui/hud.gd" id="1_0mwgc"]
+
+[node name="HUD" type="Control" unique_id=925808387]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0mwgc")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1338777846]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="LivesLabel" type="Label" parent="MarginContainer" unique_id=1888848126]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "lives: 0"
