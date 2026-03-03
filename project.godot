@@ -13,7 +13,11 @@ config_version=5
 config/name="2D-Platformer"
 run/main_scene="uid://b4dr4mhfq023e"
 config/features=PackedStringArray("4.6", "Mobile")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/stretch_mode=0
+boot_splash/image="uid://cxbxk76q3e05l"
+config/icon="uid://bfvwmbg5rg3ui"
+boot_splash/minimum_display_time=2000
 
 [autoload]
 
@@ -25,6 +29,7 @@ AudioManager="*uid://cqgjtjs3oaogc"
 
 window/size/viewport_width=480
 window/size/viewport_height=270
+window/size/mode=3
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
