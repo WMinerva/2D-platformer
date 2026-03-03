@@ -12,6 +12,11 @@ const LEVELS = {
 
 var current_level = 0
 var lives = 3
+var score = 0
+
+func update_score(points):
+	score += points
+	
 
 func load_next_level():
 	current_level += 1
@@ -31,6 +36,7 @@ func restart_level():
 	
 	
 func restart_game():
+	score = 0
 	current_level = 0
 	lives = 3
 	get_tree().change_scene_to_packed(MAIN)

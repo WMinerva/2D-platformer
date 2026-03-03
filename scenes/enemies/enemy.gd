@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 @export var speed: int
 @export var gravity: int
+@export var points: int
+
 @onready var hurt_box: Area2D = $HurtBox
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -20,6 +22,7 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 		animation_player.play("dissapear")
 		set_physics_process(false)
 		animated_sprite_2d.pause()
+		GameManager.update_score(points)
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

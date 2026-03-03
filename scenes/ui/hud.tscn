@@ -28,3 +28,9 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "lives: 0"
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer" unique_id=911237184]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "Score: 0"
