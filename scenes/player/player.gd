@@ -10,6 +10,8 @@ extends CharacterBody2D
 
 var is_facing_right = true
 
+func _ready() -> void:
+	SignalManager.level_completed.connect(_on_level_completed)
 
 func _physics_process(delta: float) -> void:
 	jump(delta)
@@ -72,3 +74,8 @@ func die():
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	GameManager.restart_level()
 	queue_free()
+
+
+func _on_level_completed():
+	set_physics_process(false)
+	animated_sprite.play("idle")

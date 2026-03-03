@@ -14,6 +14,7 @@ extends CharacterBody2D
 var player
 
 func _ready() -> void:
+	SignalManager.level_completed.connect(_on_level_completed)
 	player = get_tree().get_first_node_in_group("player")
 	set_physics_process(false)
 
@@ -37,3 +38,6 @@ func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 
 func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
 	set_physics_process(true)
+
+func _on_level_completed():
+	set_physics_process(false)
