@@ -17,15 +17,19 @@ func _ready() -> void:
 	set_physics_process(false)
 
 
-func _on_hurt_box_area_entered(area: Area2D) -> void:
+func _on_hurt_box_area_entered(_area: Area2D) -> void:
 	if player.position.y < hurt_box.global_position.y:
 		animation_player.play("dissapear")
 		set_physics_process(false)
 		animated_sprite_2d.pause()
+		#singletons
+		
 		GameManager.update_score(points)
+		SignalManager.score_updated.emit()
+		
 
 
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	queue_free()
 
 

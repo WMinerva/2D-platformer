@@ -52,7 +52,7 @@ layout_mode = 2
 theme_type_variation = &"HeaderLarge"
 text = "congratulations!"
 
-[node name="Score" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=147233547]
+[node name="ScoreLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=147233547]
 layout_mode = 2
 text = "your score: 23"
 horizontal_alignment = 1
