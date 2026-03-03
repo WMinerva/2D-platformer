@@ -3,6 +3,8 @@ extends CharacterBody2D
 @export var speed: int
 @export var jump_speed: int
 @export var gravity: int
+
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
@@ -34,6 +36,8 @@ func update_animations():
 func jump(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = -jump_speed
+		AudioManager.play_sfx(audio_stream_player_2d, AudioManager.JUMP)
+		
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
@@ -51,16 +55,18 @@ func move_x():
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
 	if area.is_in_group("traps"):
-		animation_player.play("player_death")
-		set_physics_process(false)
-		animated_sprite.pause()
+		die()
 		return 
 	if position.y < area.global_position.y:
 		velocity.y = -jump_speed
 	else:
-		animation_player.play("player_death")
-		set_physics_process(false)
-		animated_sprite.pause()
+		die()
+
+func die():
+	AudioManager.play_sfx(audio_stream_player_2d, AudioManager.PLAYER_DIE)
+	animation_player.play("player_death")
+	set_physics_process(false)
+	animated_sprite.pause()
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var hurt_box: Area2D = $HurtBox
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 var player
@@ -19,6 +20,7 @@ func _ready() -> void:
 
 func _on_hurt_box_area_entered(_area: Area2D) -> void:
 	if player.position.y < hurt_box.global_position.y:
+		AudioManager.play_sfx(audio_stream_player_2d, AudioManager.ENEMY_DIE)
 		animation_player.play("dissapear")
 		set_physics_process(false)
 		animated_sprite_2d.pause()
