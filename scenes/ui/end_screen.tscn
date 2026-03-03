@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dirx0udqknego" path="res://assets/sprites/ui/background.png" id="1_4ttpn"]
 [ext_resource type="Script" uid="uid://cly8g0tqrnouv" path="res://scenes/ui/end_screen.gd" id="1_n8r4t"]
+[ext_resource type="PackedScene" uid="uid://dnwxpvfopwdc7" path="res://scenes/ui/fade_effect.tscn" id="3_wgyui"]
 
 [node name="EndScreen" type="Control" unique_id=708624256]
 layout_mode = 3
@@ -62,5 +63,9 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "go back"
+
+[node name="FadeEffect" parent="." unique_id=1507662429 instance=ExtResource("3_wgyui")]
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Return_button" to="." method="_on_return_pressed"]
